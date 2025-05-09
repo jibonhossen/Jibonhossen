@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>Jibon Hossen</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  </style>
+  <style>
+    * {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f5f5f5;
+    }
+    
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #fff;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    
+    .navbar ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 2rem;
+    }
+    
+    .navbar a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    .navbar a:hover {
+      color: #6366f1;
+    }
+    
+    section {
+      padding: 5rem 2rem;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    #hero {
+      background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
+      color: white;
+      text-align: center;
+    }
+    
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeUp 1s forwards;
+    }
+    
+    .hero-content p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 1s 0.5s forwards;
+    }
+    
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem 0;
+    }
+    
+    .project-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 2.5rem;
+      color: #2d3748;
+    }
+    
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: #6366f1;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    
+    .btn:hover {
+      background-color: #4338ca;
+    }
+    
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s, transform 0.6s;
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    #arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    #web-links {
+      font-size: 20px;
+      font-family: "Poppins", sans-serif;
+      
+      
+    }
+  </style>
+  <style>
+    .input-field {
+  position: relative;
+}
+
+.input-field input {
+  width: 290px;
+  height: 50px;
+  border-radius: 6px;
+  font-size: 18px;
+  padding: 0 15px;
+  border: 2px solid #000;
+  background: transparent;
+  outline: none;
+  color: #000;
+}
+
+.input-field label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #000;
+  font-size: 19px;
+  pointer-events: none;
+  transition: 0.3s;
+  
+  
+}
+
+input:focus {
+  border: 2px solid #1CD679;
+}
+
+input:focus~label,
+input:valid~label {
+  top: 0px;
+  font-size: 16px;
+  padding: 0 10px;
+  background: #fff;
+}
+  </style>
+  <style>
+    .social-media{
+    
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <section id="hero">
+    <div class="container hero-content">
+      <h1>Jibon Hossen</h1>
+      <p> programmer </p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </section>
+  
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title fade-in">About Me</h2>
+      <div class="fade-in">
+        <p>I'm a passionate developer with expertise in building modern web applications. With a strong foundation in both frontend and backend development, I create seamless digital experiences that solve real-world problems.</p>
+        <br>
+        <div class="skills">
+          <h3>Skills</h3>
+          <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>Node.js</li>
+            
+            <li>Database Management</li>
+            <li>Domain Management</li>
+          </ul>
+        </div><br>
+        <div class="skills">
+          <h3>Academic Qualifications</h3>
+          <ul>
+            <li>SSC GPA 5.00</li>
+                           
+          </ul>
+        </div>
+        <br>
+        <div class="skills">
+          <h3>Hobby</h3>
+          <ul>
+            <li>Reading</li>
+            <li>Learning</li>
+            <li>Love to explore new device and Technology</li>
+            
+            <li>Love to learn about Banking System</li>
+            <li>Personal Finance Enthusiast</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title fade-in">My Projects</h2>
+      <div class="project-grid">
+        <div class="project-card fade-in">
+          <h3>Science Academy</h3>
+          <p>A modern website to show case teacher's qualifications and about thereself.</p>
+          <br>
+          <p><b>Technologies:</b> Html, Css, JavaScript and Cloudflare </p>
+          <div id="arrow"> <a id="web-links" href="https://scienceacademy.pages.dev">visit</a><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000">
+              <path d="m216-160-56-56 464-464H360v-80h400v400h-80v-264L216-160Z" />
+            </svg>
+          </div>
+        </div>
+        <div class="project-card fade-in">
+          <h3>Social Network</h3>
+          <p>A social platform for connecting professionals.</p>
+          <p>Technologies: Next.js, GraphQL, PostgreSQL</p>
+        </div>
+        <div class="project-card fade-in">
+          <h3>Task Management</h3>
+          <p>Collaborative task management application.</p>
+          <p>Technologies: Vue.js, Express, MongoDB</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title fade-in">Get in Touch</h2>
+ 
+    <div class="input-field">
+    <input type="text" required spellcheck="false">
+    <label>Enter your name</label>
+    
+  </div>
+  
+
+    </div>
+  </section>
+  
+  <a class="social-media" href="#">
+  </a>
+  
+  <script>
+    // Intersection Observer for fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    // Observe all elements with fade-in class
+    document.querySelectorAll('.fade-in').forEach(element => {
+      observer.observe(element);
+    });
+  </script>
+</body>
+
+</html>
